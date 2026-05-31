@@ -1,0 +1,1045 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Servicios | Camila Caballero</title>
+    <!-- Fuente Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .servicios-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
+
+      .servicios-grid h1 {
+        text-align: center;
+        color: #800020;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        font-weight: 600;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .servicios-grid .subtitulo {
+        text-align: center;
+        color: #666;
+        margin-bottom: 50px;
+        font-weight: 400;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .grid-servicios {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .servicio-card {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        background: white;
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        transition: transform 0.2s;
+      }
+
+      .servicio-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .servicio-imagen {
+        background: #f7f3ea;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 280px;
+        max-width: 280px;
+        padding: 20px;
+      }
+
+      .servicio-imagen img {
+        width: 100%;
+        max-width: 240px;
+        height: auto;
+        border-radius: 20px;
+        object-fit: contain;
+      }
+
+      .servicio-info {
+        flex: 2;
+        padding: 30px 30px 30px 0;
+      }
+
+      .servicio-info h3 {
+        color: #800020;
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .servicio-info .modalidad {
+        color: #b87333;
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .servicio-info .descripcion {
+        color: #444;
+        margin-bottom: 20px;
+        line-height: 1.6;
+        font-weight: 400;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .incluye {
+        background: #f7f3ea;
+        padding: 15px 20px;
+        border-radius: 15px;
+        margin: 15px 0;
+      }
+
+      .incluye h4 {
+        color: #800020;
+        margin-bottom: 10px;
+        font-weight: 600;
+        font-size: 1rem;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .incluye ul {
+        margin-left: 20px;
+      }
+
+      .incluye li {
+        margin-bottom: 5px;
+        line-height: 1.4;
+        font-weight: 400;
+        font-size: 0.9rem;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .experiencia {
+        background: #e3d9cb;
+        padding: 15px 20px;
+        border-radius: 15px;
+        margin: 15px 0;
+      }
+
+      .experiencia h4 {
+        color: #800020;
+        margin-bottom: 10px;
+        font-weight: 600;
+        font-size: 1rem;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .experiencia p,
+      .experiencia li {
+        font-weight: 400;
+        font-size: 0.9rem;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .precio {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #800020;
+        margin: 15px 0;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .precio small {
+        font-size: 0.9rem;
+        font-weight: 400;
+      }
+
+      .requisito {
+        background: #fff3e0;
+        padding: 10px 15px;
+        border-radius: 10px;
+        margin: 15px 0;
+        font-size: 0.85rem;
+        border-left: 4px solid #b87333;
+        font-weight: 400;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .botones-dobles {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .btn-reservar-bolivia {
+        background: #800020;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-block;
+        transition: background 0.2s;
+        font-size: 0.9rem;
+        font-family: "Poppins", sans-serif;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn-reservar-bolivia:hover {
+        background: #5a0016;
+      }
+
+      .btn-reservar-internacional {
+        background: #6b1525;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-block;
+        transition: background 0.2s;
+        font-size: 0.9rem;
+        font-family: "Poppins", sans-serif;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn-reservar-internacional:hover {
+        background: #4a0e19;
+      }
+
+      .btn-lista-espera {
+        background: #b87333;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-block;
+        transition: background 0.2s;
+        font-size: 0.9rem;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .btn-lista-espera:hover {
+        background: #8b5a2b;
+      }
+
+      /* MODAL - Responsivo para ambos modales */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(5px);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background: white;
+        max-width: 450px;
+        width: 90%;
+        max-height: 90vh;
+        border-radius: 25px;
+        padding: 20px;
+        text-align: center;
+        animation: fadeIn 0.3s ease;
+        position: relative;
+        overflow-y: auto;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .modal-content h2 {
+        color: #800020;
+        margin-bottom: 15px;
+        font-weight: 600;
+        font-family: "Poppins", sans-serif;
+        font-size: 1.3rem;
+      }
+
+      .modal-content .politicas {
+        text-align: left;
+        background: #f7f3ea;
+        padding: 15px;
+        border-radius: 15px;
+        margin: 15px 0;
+        max-height: 50vh;
+        overflow-y: auto;
+      }
+
+      .modal-content .politicas p {
+        margin: 8px 0;
+        font-size: 0.85rem;
+        color: #444;
+        font-family: "Poppins", sans-serif;
+        line-height: 1.4;
+      }
+
+      .modal-content .politicas strong {
+        color: #800020;
+      }
+
+      .modal-buttons {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        margin-top: 15px;
+        flex-wrap: wrap;
+      }
+
+      .btn-aceptar {
+        background: #800020;
+        color: white;
+        padding: 10px 25px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        font-family: "Poppins", sans-serif;
+        font-size: 0.9rem;
+      }
+
+      .btn-aceptar:hover {
+        background: #5a0016;
+      }
+
+      .btn-cancelar {
+        background: #ccc;
+        color: #333;
+        padding: 10px 25px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        font-family: "Poppins", sans-serif;
+        font-size: 0.9rem;
+      }
+
+      .btn-cancelar:hover {
+        background: #aaa;
+      }
+
+      .close-modal {
+        position: absolute;
+        top: 12px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #999;
+      }
+
+      .close-modal:hover {
+        color: #800020;
+      }
+
+      @media (max-width: 768px) {
+        .servicio-info {
+          padding: 20px;
+        }
+        .botones-dobles {
+          flex-direction: column;
+        }
+        .servicio-imagen {
+          min-width: 100%;
+          max-width: 100%;
+        }
+        .servicio-imagen img {
+          max-width: 200px;
+        }
+
+        /* Modal más pequeño en móviles */
+        .modal-content {
+          width: 95%;
+          padding: 15px;
+        }
+
+        .modal-content h2 {
+          font-size: 1.1rem;
+          margin-bottom: 10px;
+        }
+
+        .modal-content .politicas p {
+          font-size: 0.75rem;
+          margin: 6px 0;
+        }
+
+        .btn-aceptar,
+        .btn-cancelar {
+          padding: 8px 20px;
+          font-size: 0.8rem;
+        }
+
+        .close-modal {
+          top: 8px;
+          right: 12px;
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <a href="index.html" class="logo">
+          <img src="assets/logo.png" alt="Logo" style="height: 90px" />
+        </a>
+        <nav>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="testimonios.html">Testimonios</a></li>
+          </ul>
+        </nav>
+        <a href="servicios.html" class="btn-header">Quiero un servicio</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="servicios-grid">
+        <h1>Mis Servicios</h1>
+        <div class="subtitulo">Elige el servicio que mejor se adapte a ti</div>
+
+        <div class="grid-servicios">
+          <!-- SERVICIO 1: GLOW UP PRO - ASESORÍA GRUPAL -->
+          <div class="servicio-card">
+            <div class="servicio-imagen">
+              <img
+                src="assets/servicios/asesoriasgrupales.jpg"
+                alt="Asesoría Grupal - Glow Up Pro"
+              />
+            </div>
+            <div class="servicio-info">
+              <h3>Glow Up Pro - Asesoría Grupal</h3>
+              <div class="modalidad">
+                📍 Presencial en La Paz | Próximamente en Santa Cruz, Cochabamba
+                y Oruro
+              </div>
+              <div class="descripcion">
+                Un taller exclusivo para mujeres que quieren verse y sentirse
+                imparables. Eleva tu autoestima, confianza y estilo con
+                herramientas de imagen estratégica.
+              </div>
+
+              <div class="incluye">
+                <h4>📦 Contenido</h4>
+                <ul>
+                  <li>Marca personal</li>
+                  <li>Estilo personal</li>
+                  <li>Tipo de cuerpo</li>
+                  <li>Colorimetría (incluye test personalizado básico)</li>
+                  <li>Psicología del color y combinaciones</li>
+                  <li>Armario inteligente</li>
+                </ul>
+              </div>
+
+              <div class="incluye">
+                <h4>📦 Material</h4>
+                <ul>
+                  <li>Workbook para la clase</li>
+                  <li>Paleta de color personalizada</li>
+                  <li>7 ebooks de regalo</li>
+                  <li>Test online tipo de rostro</li>
+                  <li>Challenge de 21 días (videos)</li>
+                  <li>Incluye certificado digital</li>
+                </ul>
+              </div>
+
+              <div class="precio">
+                Bs. 320 <small>| Preventa Bs. 280</small>
+              </div>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSf7OwDWWS0Txg5X-b_MXMEMoIuuEv2wPlvxmEpvGsf9_cCB6A/viewform?usp=publish-editor"
+                target="_blank"
+                class="btn-lista-espera"
+                >📋 Lista de Espera</a
+              >
+            </div>
+          </div>
+
+          <!-- SERVICIO 2: COLORIMETRÍA 24 HORAS -->
+          <div class="servicio-card">
+            <div class="servicio-imagen">
+              <img src="assets/servicios/colorimetria.PNG" alt="Colorimetría" />
+            </div>
+            <div class="servicio-info">
+              <h3>Colorimetría 24 horas</h3>
+              <div class="modalidad">
+                📍 Presencial en La Paz | 💻 Virtual en otras ciudades y el
+                mundo
+              </div>
+              <div class="descripcion">
+                Análisis de colorimetría personalizado. Identificación de
+                subtono, contraste y luminosidad.
+              </div>
+
+              <div class="incluye">
+                <h4>📦 ¿Qué incluye?</h4>
+                <ul>
+                  <li>Paleta de color personalizada (estación de color)</li>
+                  <li>
+                    Recomendaciones de color para: vestuario, maquillaje
+                    (labial, rubor, ojos), color de cabello
+                  </li>
+                  <li>Guía personalizada + Círculo cromático y paleta</li>
+                  <li>Clase pregrabada de combinación de color</li>
+                </ul>
+              </div>
+
+              <div class="experiencia">
+                <h4>Así será tu experiencia</h4>
+                <ul>
+                  <li>
+                    <strong>Primera fase:</strong> Descubrimos tus colores con
+                    un análisis de colorimetría
+                  </li>
+                  <li>
+                    <strong>Segunda fase:</strong> Recibes tu guía de colores
+                    personalizada, paleta de color y círculo cromático
+                  </li>
+                  <li>
+                    <strong>Tercera fase:</strong> Accederás a una clase
+                    pregrabada para aprender a usar tus colores
+                  </li>
+                </ul>
+              </div>
+
+              <div class="precio">Bs. 230 <small>/ $39 USD</small></div>
+              <div class="botones-dobles">
+                <button
+                  class="btn-reservar-bolivia"
+                  data-url="pago-bolivia.html?servicio=colorimetria"
+                >
+                  🇧🇴 Pago Bolivia
+                </button>
+                <button
+                  class="btn-reservar-internacional"
+                  data-url="pago-mundo.html?servicio=colorimetria"
+                >
+                  🌎 Pago Internacional
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- SERVICIO 3: STYLING PRO -->
+          <div class="servicio-card">
+            <div class="servicio-imagen">
+              <img src="assets/servicios/stylingpro.jpg" alt="Styling Pro" />
+            </div>
+            <div class="servicio-info">
+              <h3>Styling Pro</h3>
+              <div class="modalidad">
+                📍 Presencial en La Paz | 💻 Virtual en otras ciudades y el
+                mundo
+              </div>
+              <div class="descripcion">
+                Define tu estilo personal y entiendes qué te favorece según tu
+                cuerpo, para vestirte con seguridad, intención y coherencia.
+              </div>
+
+              <div class="incluye">
+                <h4>📦 ¿Qué incluye?</h4>
+                <ul>
+                  <li>Estilo personal (líneas, esencia, referentes)</li>
+                  <li>
+                    Tipo de cuerpo + ilusiones ópticas para potenciar tu figura
+                  </li>
+                  <li>Prendas clave que te favorecen según tu silueta</li>
+                  <li>Qué evitar (errores comunes)</li>
+                  <li>Guía base para construir outfits con intención</li>
+                  <li>
+                    Guía personalizada de estilo + recomendaciones + referencias
+                    visuales
+                  </li>
+                </ul>
+              </div>
+
+              <div class="precio">Bs. 250 <small>/ $35 USD</small></div>
+              <div class="botones-dobles">
+                <button
+                  class="btn-reservar-bolivia"
+                  data-url="pago-bolivia.html?servicio=styling"
+                >
+                  🇧🇴 Pago Bolivia
+                </button>
+                <button
+                  class="btn-reservar-internacional"
+                  data-url="pago-mundo.html?servicio=styling"
+                >
+                  🌎 Pago Internacional
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- SERVICIO 4: DISEÑO DE IMAGEN (4 semanas) -->
+          <div class="servicio-card">
+            <div class="servicio-imagen">
+              <img
+                src="assets/servicios/disenodeimagen.PNG"
+                alt="Diseño de Imagen"
+              />
+            </div>
+            <div class="servicio-info">
+              <h3>Diseño de Imagen - 4 semanas</h3>
+              <div class="modalidad">
+                📍 Presencial en La Paz | 💻 Virtual en otras ciudades y el
+                mundo
+              </div>
+
+              <div class="incluye">
+                <h4>📅 SESIÓN 1 – Diagnóstico de Imagen (1 hora presencial)</h4>
+                <ul>
+                  <li>
+                    Marca personal, estilo personal, tipo de cuerpo + ilusiones
+                    ópticas
+                  </li>
+                  <li>Tipo de rostro (accesorios, corte de cabello y gafas)</li>
+                  <li>
+                    Colorimetría (test personalizado, color cabello, maquillaje)
+                  </li>
+                  <li>
+                    <strong>Entrega:</strong> Workbook + Paleta de color
+                    personalizada
+                  </li>
+                </ul>
+              </div>
+
+              <div class="incluye">
+                <h4>📅 SESIÓN 2 – Estrategia de Armario (50 min virtual)</h4>
+                <ul>
+                  <li>
+                    Psicología del color aplicada, combinaciones estratégicas
+                  </li>
+                  <li>Armario inteligente, método para multiplicar looks</li>
+                  <li>
+                    <strong>Entrega:</strong> Herramienta para limpieza de
+                    armario
+                  </li>
+                </ul>
+              </div>
+
+              <div class="incluye">
+                <h4>📅 SESIÓN 3 – Implementación (50 min virtual)</h4>
+                <ul>
+                  <li>Armamos looks juntas, armario digital en app</li>
+                  <li>Recomendaciones de compras inteligentes</li>
+                  <li>
+                    <strong>Entrega:</strong> Guía personalizada + Armario
+                    digital + Challenge 21 días + 7 ebooks + Dónde comprar
+                  </li>
+                </ul>
+              </div>
+
+              <div class="incluye">
+                <h4>📅 SESIÓN 4 – Automaquillaje Diario (50 min virtual)</h4>
+                <ul>
+                  <li>
+                    Preparación de la piel, base natural, cejas, ojos sencillos
+                  </li>
+                  <li>Rubor + labios, revisión de cosmetiquero</li>
+                </ul>
+              </div>
+
+              <div class="experiencia">
+                <h4>🎁 BONUS</h4>
+                <p>
+                  Sesión virtual de 30 minutos de seguimiento después de 3 meses
+                  del servicio.
+                </p>
+              </div>
+
+              <div class="precio">Bs. 720 <small>/ $119 USD</small></div>
+              <div class="botones-dobles">
+                <button
+                  class="btn-reservar-bolivia"
+                  data-url="pago-bolivia.html?servicio=diseno"
+                >
+                  🇧🇴 Pago Bolivia
+                </button>
+                <button
+                  class="btn-reservar-internacional"
+                  data-url="pago-mundo.html?servicio=diseno"
+                >
+                  🌎 Pago Internacional
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- SERVICIO 5: ARMARIO INTELIGENTE (solo La Paz) -->
+          <div class="servicio-card">
+            <div class="servicio-imagen">
+              <img
+                src="assets/servicios/armariointeligente.jpg"
+                alt="Armario Inteligente"
+              />
+            </div>
+            <div class="servicio-info">
+              <h3>Armario Inteligente</h3>
+              <div class="modalidad">📍 ÚNICAMENTE PRESENCIAL EN LA PAZ</div>
+              <div class="descripcion">
+                Limpieza estratégica de armario + 15 looks digitales con tus
+                prendas.
+              </div>
+
+              <div class="incluye">
+                <h4>📦 Material</h4>
+                <ul>
+                  <li>Armario digital</li>
+                  <li>15 looks con tus prendas</li>
+                  <li>Lista de prendas que recomiendo comprar</li>
+                  <li>BONUS: clase pregrabada de cómo combinar colores</li>
+                </ul>
+              </div>
+
+              <div class="experiencia">
+                <h4>SESIÓN 1 (Presencial - 3 horas)</h4>
+                <p>
+                  Conversamos sobre tus objetivos de imagen personal. Realizamos
+                  una limpieza estratégica de armario, optimizando cada prenda.
+                </p>
+                <h4 style="margin-top: 15px">SESIÓN 2 (Online - 40 minutos)</h4>
+                <p>
+                  Crearemos 15 looks en tu armario digital. Te enseñaré a usar
+                  la app para organizar tus outfits.
+                </p>
+              </div>
+
+              <div class="requisito">
+                ⚠️ <strong>Pre requisito:</strong> Para acceder a Armario
+                Inteligente, es requisito haber completado previamente el curso
+                de <strong>Styling Pro</strong> (Tipo de Cuerpo y Estilo), ya
+                que es la base para realizar una depuración de armario con
+                sentido.
+              </div>
+
+              <div class="precio">Bs. 650</div>
+              <button
+                class="btn-reservar-bolivia"
+                data-url="pago-bolivia.html?servicio=armario"
+              >
+                🇧🇴 Pago Bolivia (solo presencial)
+              </button>
+            </div>
+          </div>
+
+          <!-- SERVICIO 6: PERSONAL SHOPPER (solo La Paz) -->
+          <div class="servicio-card">
+            <div class="servicio-imagen">
+              <img
+                src="assets/servicios/personalshoper.jpg"
+                alt="Personal Shopper"
+              />
+            </div>
+            <div class="servicio-info">
+              <h3>Personal Shopper</h3>
+              <div class="modalidad">📍 ÚNICAMENTE PRESENCIAL EN LA PAZ</div>
+              <div class="descripcion">
+                Compra estratégica, inteligente y alineada a tu estilo, evitando
+                compras impulsivas.
+              </div>
+
+              <div class="incluye">
+                <h4>📦 ¿Qué incluye?</h4>
+                <ul>
+                  <li>
+                    Planificación previa según estilo, necesidades y presupuesto
+                  </li>
+                  <li>Acompañamiento en compras (tiendas seleccionadas)</li>
+                  <li>Selección de prendas clave que realmente vas a usar</li>
+                  <li>
+                    Asesoría en tiempo real (fit, combinaciones, decisiones)
+                  </li>
+                  <li>Creación de looks con las prendas compradas</li>
+                  <li>Organización de outfits en app</li>
+                  <li>Base de armario más funcional y combinable</li>
+                </ul>
+              </div>
+
+              <div class="requisito">
+                ⚠️ <strong>Prerrequisito:</strong> Haber tomado
+                <strong>Styling Pro</strong> o la sesión de
+                <strong>Armario Inteligente</strong> (limpieza de armario).
+              </div>
+
+              <div class="precio">Bs. 500</div>
+              <button
+                class="btn-reservar-bolivia"
+                data-url="pago-bolivia.html?servicio=shopping"
+              >
+                🇧🇴 Pago Bolivia (solo presencial)
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo">
+          <img src="assets/logo.png" alt="Logo" style="height: 40px" />
+          <p>Transformando imágenes, potenciando confianza.</p>
+        </div>
+        <div class="footer-redes">
+          <h4>Sígueme</h4>
+          <div class="redes-sociales">
+            <a
+              href="https://www.instagram.com/camilacaballerot?igsh=MXFzeWJzNnZjZWluYw%3D%3D&utm_source=qr"
+              target="_blank"
+              >📷 Instagram</a
+            >
+            <a
+              href="https://www.facebook.com/share/1AzXtD2ey5/?mibextid=wwXIfr"
+              target="_blank"
+              >📘 Facebook</a
+            >
+            <a
+              href="https://www.tiktok.com/@camila.caballerot?_r=1&_t=ZS-95GVRi7DNnJ"
+              target="_blank"
+              >📱 TikTok</a
+            >
+            <a
+              href="https://youtube.com/@camila.caballero?si=crziNJTOOJBq2k0i"
+              target="_blank"
+              >▶️ YouTube</a
+            >
+          </div>
+        </div>
+        <div class="footer-contacto">
+          <h4>Contacto</h4>
+          <a href="https://wa.me/59169696211" class="whatsapp-footer"
+            >📞 +59169696211</a
+          >
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 Camila Caballero - Asesoría de Imagen. Todos los derechos
+          reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- MODAL 1: POLÍTICAS DE CANCELACIÓN - PAGO BOLIVIA -->
+    <div id="modalBolivia" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" id="closeModalBolivia">&times;</span>
+        <h2>📋 Políticas de Cancelación</h2>
+        <div class="politicas">
+          <p>📌 Lee atentamente antes de confirmar tu cita:</p>
+          <p>
+            ✅ Puedes cambiar la fecha de tu cita con
+            <strong>24 horas de anticipación</strong>.
+          </p>
+          <p>
+            💰 Después de realizar el pago de un curso, solo es posible cambiar
+            la fecha. <strong>No existen devoluciones</strong>.
+          </p>
+          <p>
+            ⏱️ Las asesorías personalizadas cuentan con un máximo de
+            <strong>15 minutos de tolerancia</strong>.
+          </p>
+          <p>
+            ⚠️ En caso de no presentarte a tu cita o de exceder el tiempo de
+            tolerancia, se aplicará una penalidad de <strong>Bs 50</strong>,
+            correspondiente al tiempo y al espacio reservado exclusivamente para
+            ti.
+          </p>
+          <p>🔄 Tu reserva se mantiene para reprogramar tu cita.</p>
+        </div>
+        <div class="modal-buttons">
+          <button id="btnAceptarBolivia" class="btn-aceptar">✅ Acepto</button>
+          <button id="btnCancelarBolivia" class="btn-cancelar">
+            ❌ Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL 2: POLÍTICAS DE CANCELACIÓN - PAGO INTERNACIONAL (RESUMIDO) -->
+    <div id="modalInternacional" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" id="closeModalInternacional">&times;</span>
+        <h2>📋 Políticas de Cancelación</h2>
+        <div class="politicas">
+          <p>📌 Lee atentamente antes de confirmar tu cita:</p>
+          <p>
+            ✅ Puedes cambiar la fecha de tu cita con
+            <strong>24 horas de anticipación</strong>.
+          </p>
+          <p>
+            💰 Después de realizar el pago de un curso, solo es posible cambiar
+            la fecha. <strong>No existen devoluciones</strong>.
+          </p>
+          <p>
+            ⏱️ Las asesorías personalizadas cuentan con un máximo de
+            <strong>15 minutos de tolerancia</strong>.
+          </p>
+          <p>🔄 Tu reserva se mantiene para reprogramar tu cita.</p>
+        </div>
+        <div class="modal-buttons">
+          <button id="btnAceptarInternacional" class="btn-aceptar">
+            ✅ Acepto
+          </button>
+          <button id="btnCancelarInternacional" class="btn-cancelar">
+            ❌ Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // ==================== MODAL BOLIVIA ====================
+      const modalBolivia = document.getElementById("modalBolivia");
+      const closeModalBolivia = document.getElementById("closeModalBolivia");
+      const btnAceptarBolivia = document.getElementById("btnAceptarBolivia");
+      const btnCancelarBolivia = document.getElementById("btnCancelarBolivia");
+      let urlDestinoBolivia = "";
+
+      function abrirModalBolivia(url) {
+        urlDestinoBolivia = url;
+        modalBolivia.style.display = "flex";
+        document.body.style.overflow = "hidden";
+      }
+
+      function cerrarModalBolivia() {
+        modalBolivia.style.display = "none";
+        urlDestinoBolivia = "";
+        document.body.style.overflow = "";
+      }
+
+      function redirigirPagoBolivia() {
+        if (urlDestinoBolivia) {
+          window.location.href = urlDestinoBolivia;
+        }
+        cerrarModalBolivia();
+      }
+
+      // Event listeners para botones de Pago Bolivia
+      document.querySelectorAll(".btn-reservar-bolivia").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const url = btn.getAttribute("data-url");
+          abrirModalBolivia(url);
+        });
+      });
+
+      closeModalBolivia.addEventListener("click", cerrarModalBolivia);
+      btnCancelarBolivia.addEventListener("click", cerrarModalBolivia);
+      btnAceptarBolivia.addEventListener("click", redirigirPagoBolivia);
+
+      // ==================== MODAL INTERNACIONAL ====================
+      const modalInternacional = document.getElementById("modalInternacional");
+      const closeModalInternacional = document.getElementById(
+        "closeModalInternacional",
+      );
+      const btnAceptarInternacional = document.getElementById(
+        "btnAceptarInternacional",
+      );
+      const btnCancelarInternacional = document.getElementById(
+        "btnCancelarInternacional",
+      );
+      let urlDestinoInternacional = "";
+
+      function abrirModalInternacional(url) {
+        urlDestinoInternacional = url;
+        modalInternacional.style.display = "flex";
+        document.body.style.overflow = "hidden";
+      }
+
+      function cerrarModalInternacional() {
+        modalInternacional.style.display = "none";
+        urlDestinoInternacional = "";
+        document.body.style.overflow = "";
+      }
+
+      function redirigirPagoInternacional() {
+        if (urlDestinoInternacional) {
+          window.location.href = urlDestinoInternacional;
+        }
+        cerrarModalInternacional();
+      }
+
+      // Event listeners para botones de Pago Internacional
+      document
+        .querySelectorAll(".btn-reservar-internacional")
+        .forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const url = btn.getAttribute("data-url");
+            abrirModalInternacional(url);
+          });
+        });
+
+      closeModalInternacional.addEventListener(
+        "click",
+        cerrarModalInternacional,
+      );
+      btnCancelarInternacional.addEventListener(
+        "click",
+        cerrarModalInternacional,
+      );
+      btnAceptarInternacional.addEventListener(
+        "click",
+        redirigirPagoInternacional,
+      );
+
+      // ==================== FUNCIONES COMPARTIDAS ====================
+      // Cerrar modales con clic fuera del contenido
+      window.addEventListener("click", (e) => {
+        if (e.target === modalBolivia) {
+          cerrarModalBolivia();
+        }
+        if (e.target === modalInternacional) {
+          cerrarModalInternacional();
+        }
+      });
+
+      // Cerrar modales con tecla ESC
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          if (modalBolivia.style.display === "flex") {
+            cerrarModalBolivia();
+          }
+          if (modalInternacional.style.display === "flex") {
+            cerrarModalInternacional();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
