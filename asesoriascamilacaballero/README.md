@@ -1,8 +1,12 @@
 # 💄 Camila Caballero – Asesoría de Imagen & Fashion Stylist
 
-[![Website](https://img.shields.io/badge/website-live-green)](https://asesoriascamilacaballero.github.io/asesoriascamilacaballero/servicios.html) 
+[![Website](https://img.shields.io/badge/website-live-green)](https://estudioscct-data.github.io/web-pages/asesoriascamilacaballero/)
 
 Sitio web profesional para una asesora de imagen y fashion stylist. Muestra sus servicios, permite reservar citas y gestiona pagos para clientes en Bolivia y el extranjero.
+
+## 🌐 Sitio en producción
+
+El sitio **no está alojado en GitHub Pages**. Se encuentra activo y funcionando en su dominio oficial para clientes reales. Este repositorio es únicamente para fines de portafolio y control de versiones.
 
 ## 🎯 Propósito
 
@@ -25,29 +29,30 @@ El sitio fue diseñado para:
 ## 📂 Estructura del proyecto
 
 ```
-camila-asesoria-imagen/
-│
-├── index.html
-├── servicios.html
-├── pago-bolivia.html
-├── pago-mundo.html
-├── testimonios.html
-│
-├── css/
-│   └── style.css
-│
-├── assets/
-│   ├── logo.png
-│   ├── camila-foto.JPG
-│   ├── qr.jpg
-│   └── servicios/
-│       ├── asesoriasgrupales.jpg
-│       ├── colorimetria.PNG
-│       ├── stylingpro.jpg
-│       ├── disenodeimagen.PNG
-│       ├── armariointeligente.jpg
-│       └── personalshoper.jpg
-│
+
+web-pages/
+└── asesoriascamilacaballero/
+    ├── index.html
+    ├── servicios.html
+    ├── pago-bolivia.html
+    ├── pago-mundo.html
+    ├── testimonios.html
+    │
+    ├── css/
+    │   └── style.css
+    │
+    ├── assets/
+    │   ├── logo.png
+    │   ├── camila-foto.JPG
+    │   ├── qr.jpg
+    │   └── servicios/
+    │       ├── asesoriasgrupales.jpg
+    │       ├── colorimetria.PNG
+    │       ├── stylingpro.jpg
+    │       ├── disenodeimagen.PNG
+    │       ├── armariointeligente.jpg
+    │       └── personalshoper.jpg
+    │
 └── README.md
 ```
 ## ✨ Características destacadas
@@ -62,12 +67,12 @@ camila-asesoria-imagen/
 
 ### Local
 ```bash
-git clone https://github.com/tu-usuario/camila-asesoria-imagen.git
-cd camila-asesoria-imagen
+git clone https://github.com/estudioscct-data/web-pages.git
+cd web-pages/asesoriascamilacaballero
 # Abre index.html con tu navegador
 En vivo (GitHub Pages)
 Una vez que el repositorio esté en tu cuenta, activa GitHub Pages desde la configuración. El sitio estará disponible en:
-https://tu-usuario.github.io/camila-asesoria-imagen
+https://estudioscct-data.github.io/web-pages/asesoriascamilacaballero/
 
 ## 📌 Estado del proyecto 
 ## ✅ En producción – El sitio está siendo utilizado por una clienta real para gestionar su negocio de asesoría de imagen. Se mantiene activo y en constante mejora.
