@@ -73,6 +73,7 @@ cd web-pages/asesoriascamilacaballero
 En vivo (GitHub Pages)
 Una vez que el repositorio esté en tu cuenta, activa GitHub Pages desde la configuración. El sitio estará disponible en:
 https://estudioscct-data.github.io/web-pages/asesoriascamilacaballero/
+```
 📌 Estado del proyecto 
 ✅ En producción – El sitio está siendo utilizado por una clienta real para gestionar su negocio de asesoría de imagen. Se mantiene activo y en constante mejora.
 👩‍💻 Autor
